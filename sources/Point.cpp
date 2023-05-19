@@ -1,5 +1,9 @@
 #include "Point.hpp"
 
+#include <cmath>
+#include <iostream>
+using namespace std;
+
 namespace ariel
 {
 
@@ -15,16 +19,36 @@ namespace ariel
 
     double Point::distance(const Point &p) const
     {
-        return -1;
+        double x = pow(p._x - this->_x, 2);
+        double y = pow(p._y - this->_y, 2);
+        return sqrt(x + y);
     }
 
     void Point::Print()
     {
     }
 
-    Point Point::moveTowards(Point &originPoint, Point &destinationPoint, double distance)
+    Point Point::moveTowards(const Point &originPoint, const Point &destinationPoint, const double distance)
     {
-        return originPoint;
+        if (distance < 0)
+            throw invalid_argument("Negative distance given");
+            
+        if (originPoint.distance(destinationPoint) < distance) // if the input distance is greater than the actual distance between originPoint and destinationPoint
+            return destinationPoint;
+
+        // vector of originPoint and destinationPoint
+        double xVector = destinationPoint._x - originPoint._x;
+        double yVector = destinationPoint._y - originPoint._y;
+
+        // norm calculation
+        double norm = sqrt(xVector * xVector + yVector * yVector);
+
+        // normlized vector
+        double xNormalized = xVector / norm;
+        double yNormalized = yVector / norm;
+
+        Point p(originPoint._x + distance * xNormalized, originPoint._y + distance * yNormalized);
+        return p;
     }
 
     // bool Point::operator==(const Point &other) const
