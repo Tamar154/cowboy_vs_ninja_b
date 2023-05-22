@@ -13,6 +13,12 @@ namespace ariel
         Point _location;
         int _hp;
         string _name;
+        bool _character_assigned = false;
+
+    protected:
+        void setLocation(Point location);
+        void setHp(int hitPoints);
+        void setName(string name);
 
     public:
         Character(const Point &location, int hitPoints, string name);
@@ -21,15 +27,14 @@ namespace ariel
         int getHp() const;
         string getName() const;
 
-        void setLocation(Point location);
-        void setHp(int hitPoints);
-        void setName(string name);
-
         // bool operator==(const Character &other) const; // ?
 
-        bool isAlive();
-        double distance(const Character *other);
+        bool isAlive() const;
+        double distance(const Character *other) const;
         void hit(int amount);
-        string print();
+        virtual string print() const;
+
+        bool isAssigned() const;
+        void setAssigned();
     };
 }

@@ -3,9 +3,10 @@
 namespace ariel
 {
     
-    // SmartTeam::~SmartTeam()
-    // {
-    // }
+    SmartTeam::SmartTeam(Character *leader) : Team(leader)
+    {
+
+    }
 
     void SmartTeam::print()
     {

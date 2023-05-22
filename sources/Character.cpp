@@ -20,28 +20,41 @@ namespace ariel
     void Character::setHp(int hitPoints) { _hp = hitPoints; }
     void Character::setName(string name) { _name = name; }
 
-    bool Character::isAlive()
+    bool Character::isAlive() const
     {
-        return false;
+        return _hp > 0;
     }
 
-    double Character::distance(const Character *other)
+    double Character::distance(const Character *other) const
     {
-        return 0.0;
+        return this->_location.distance(other->_location);
     }
 
     void Character::hit(int amount)
     {
+        if (amount < 0)
+            throw invalid_argument("hit amount cannot be negative");
+        _hp -= amount;
+
+        if (_hp < 0)
+            _hp = 0;
     }
 
-    string Character::print()
+    string Character::print() const
     {
-        return "";
+        if (this->isAlive())
+            return _name + ", " + to_string(_hp) + ", " + _location.Print();
+        else
+            return "(" + _name + "), " + _location.Print();
     }
 
-    // bool Character::operator==(const Character &other) const
-    // {
-    //     return false;
-    // }
+    bool Character::isAssigned() const
+    {
+        return _character_assigned;
+    }
+    void Character::setAssigned()
+    {
+        _character_assigned = true;
+    }
 
 }

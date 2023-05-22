@@ -4,7 +4,7 @@
 
 namespace ariel
 {
-    class TrainedNinja : public Ninja // public?
+    class TrainedNinja : public Ninja
     {
 
     public:

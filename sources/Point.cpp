@@ -24,15 +24,16 @@ namespace ariel
         return sqrt(x + y);
     }
 
-    void Point::Print()
+    string Point::Print() const
     {
+        return "(" + to_string(_x) + ", " + to_string(_y) + ")";
     }
 
     Point Point::moveTowards(const Point &originPoint, const Point &destinationPoint, const double distance)
     {
         if (distance < 0)
             throw invalid_argument("Negative distance given");
-            
+
         if (originPoint.distance(destinationPoint) < distance) // if the input distance is greater than the actual distance between originPoint and destinationPoint
             return destinationPoint;
 

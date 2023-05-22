@@ -9,14 +9,17 @@ namespace ariel
     private:
         int _speed;
 
+    protected:
+        void setSpeed(int speed);
+
     public:
         Ninja(const std::string &name, const Point &location);
 
-        int getSpeed();
-        void setSpeed(int speed);
+        int getSpeed() const;
 
         void move(Character *enemy);
-        void slash(Character *enemy);
+        void slash(Character *enemy) const;
+        std::string print() const override;
     };
 
 }

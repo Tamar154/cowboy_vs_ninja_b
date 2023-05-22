@@ -23,7 +23,7 @@ namespace ariel
         double getY() const;
 
         double distance(const Point &other) const;
-        void Print();
+        std::string Print() const;
 
         /**
          * @param originPoint

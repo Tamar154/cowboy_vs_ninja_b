@@ -8,11 +8,8 @@ namespace ariel
     {
 
     public:
-        // ~SmartTeam() override;
+        SmartTeam(Character *leader);
 
-        /**
-         * Overrides the print function of Team
-         */
         void print();
     };
 }
