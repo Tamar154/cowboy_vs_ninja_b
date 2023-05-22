@@ -3,9 +3,6 @@
 
 namespace ariel
 {
-    void cowboyAttack(Cowboy *cowboy, Character *enemy);
-    void ninjaAttack(Ninja *ninja, Character *enemy);
-
     Team::Team(Character *leader) : _leader(leader)
     {
         if (leader->isAssigned())
@@ -144,7 +141,7 @@ namespace ariel
         return target;
     }
 
-    void cowboyAttack(Cowboy *cowboy, Character *enemy)
+    void Team::cowboyAttack(Cowboy *cowboy, Character *enemy)
     {
         if (cowboy->hasboolets())
             cowboy->shoot(enemy);
@@ -152,7 +149,7 @@ namespace ariel
             cowboy->reload();
     }
 
-    void ninjaAttack(Ninja *ninja, Character *enemy)
+    void Team::ninjaAttack(Ninja *ninja, Character *enemy)
     {
         if (ninja->distance(enemy) < 1)
             ninja->slash(enemy);

@@ -46,5 +46,7 @@ namespace ariel
         // Helper functions
         void checkLeader();
         Character *chooseAliveTarget(Team *team) const;
+        void cowboyAttack(Cowboy *cowboy, Character *enemy);
+        void ninjaAttack(Ninja *ninja, Character *enemy);
     };
 }

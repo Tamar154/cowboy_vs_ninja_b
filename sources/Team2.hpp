@@ -11,14 +11,8 @@ namespace ariel
     public:
 
         Team2(Character *leader);
-
-        // ~Team2() override;
-
-        /**
-         * Overrides the print function of Team
-         */
-        void print();
-
         
+        void attack(Team *enemy) override;
+        void print();
     };
 }
