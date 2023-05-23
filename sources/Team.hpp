@@ -23,7 +23,7 @@ namespace ariel
     public:
         Team(Character *leader);
 
-        ~Team();
+        virtual ~Team();
 
         Team(const Team &other) = delete;            // To make tidy happy
         Team &operator=(const Team &other) = delete; // To make tidy happy
@@ -32,8 +32,6 @@ namespace ariel
 
         std::vector<Character *> getTeam() const;
         Character *getLeader() const;
-
-        // void setLeader(Character* leader);
 
         void add(Character *player);
 

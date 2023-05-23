@@ -14,6 +14,11 @@ namespace ariel
 
     public:
         Ninja(const std::string &name, const Point &location);
+        ~Ninja() override = default;
+        Ninja(const Ninja &other) = default;
+        Ninja &operator=(const Ninja &other) = default;
+        Ninja(Ninja &&other) = default;
+        Ninja &operator=(Ninja &&other) = default;
 
         int getSpeed() const;
 

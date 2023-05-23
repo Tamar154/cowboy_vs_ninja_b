@@ -7,8 +7,6 @@ using namespace std;
 namespace ariel
 {
 
-    // Point::Point() : _x(0), _y(0) {}
-
     Point::Point(double x, double y) : _x(x), _y(y) {}
 
     double Point::getX() const { return _x; }
@@ -29,7 +27,7 @@ namespace ariel
         return "(" + to_string(_x) + ", " + to_string(_y) + ")";
     }
 
-    Point Point::moveTowards(const Point &originPoint, const Point &destinationPoint, const double distance)
+    Point Point::moveTowards(const Point &originPoint, const Point &destinationPoint, double distance)
     {
         if (distance < 0)
             throw invalid_argument("Negative distance given");
@@ -52,8 +50,4 @@ namespace ariel
         return p;
     }
 
-    // bool Point::operator==(const Point &other) const
-    // {
-    //     return false;
-    // }
 }

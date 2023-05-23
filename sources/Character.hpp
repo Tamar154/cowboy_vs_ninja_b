@@ -22,12 +22,15 @@ namespace ariel
 
     public:
         Character(const Point &location, int hitPoints, string name);
+        virtual ~Character() = default;
+        Character(const Character &other) = default;            
+        Character &operator=(const Character &other) = default; 
+        Character(Character &&other) = default;                 
+        Character &operator=(Character &&other) = default;
 
         Point getLocation() const;
         int getHp() const;
         string getName() const;
-
-        // bool operator==(const Character &other) const; // ?
 
         bool isAlive() const;
         double distance(const Character *other) const;

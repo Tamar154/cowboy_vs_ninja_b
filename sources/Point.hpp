@@ -13,8 +13,8 @@ namespace ariel
         double _x;
         double _y;
 
-        void setX(double xVal); /* public? */
-        void setY(double yVal); /* public? */
+        void setX(double xVal);
+        void setY(double yVal);
 
     public:
         Point(double xVal, double yVal);
@@ -25,15 +25,6 @@ namespace ariel
         double distance(const Point &other) const;
         std::string Print() const;
 
-        /**
-         * @param originPoint
-         * @param destinationPoint
-         * @param distance
-         *
-         * @return The closest point to destinationPoint that is located at most the given distance from originPoint
-         */
-        static Point moveTowards(const Point &originPoint, const Point &destinationPoint, const double distance);
-
-        // bool operator==(const Point &other) const;
+        static Point moveTowards(const Point &originPoint, const Point &destinationPoint, double distance);
     };
 }

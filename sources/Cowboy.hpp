@@ -14,6 +14,11 @@ namespace ariel
 
     public:
         Cowboy(const std::string &name, const Point &location);
+        ~Cowboy() override = default;
+        Cowboy(const Cowboy &other) = default;           
+        Cowboy &operator=(const Cowboy &other) = default; 
+        Cowboy(Cowboy &&other) = default;                 
+        Cowboy &operator=(Cowboy &&other) = default;
 
         int getNumOfBullets() const;
 
@@ -21,7 +26,6 @@ namespace ariel
         bool hasboolets() const;
         void reload();
         std::string print() const override;
-
     };
 
 }
