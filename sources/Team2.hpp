@@ -13,6 +13,5 @@ namespace ariel
         Team2(Character *leader);
         
         void attack(Team *enemy) override;
-        void print();
     };
 }

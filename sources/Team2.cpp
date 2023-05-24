@@ -41,7 +41,4 @@ namespace ariel
         }
     }
 
-    void Team2::print()
-    {
-    }
 }

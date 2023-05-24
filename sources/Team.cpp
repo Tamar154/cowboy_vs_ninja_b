@@ -104,6 +104,10 @@ namespace ariel
 
     void Team::print() const
     {
+        for (Character *c : _team)
+        {
+            cout << c->print() << endl;
+        }
     }
 
     void Team::checkLeader()
